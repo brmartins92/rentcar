@@ -43,7 +43,36 @@
                         "description": "Category already exists"
                     }
                 }
+            },
+            "get": {
+                "tags": ["Category"],
+                "summary": "Create a category",
+                "description": "All category",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+
     }
 }
