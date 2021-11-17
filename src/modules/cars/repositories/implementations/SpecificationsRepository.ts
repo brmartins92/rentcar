@@ -2,7 +2,7 @@ import {
   ISpecificationDTO,
   ISpecificationRepository,
 } from "../interfaces/ISpecificationsRepository";
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 
 class SpecificationsRepository implements ISpecificationRepository {
   private specifications: Specification[];
