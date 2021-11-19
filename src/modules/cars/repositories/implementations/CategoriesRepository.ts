@@ -8,17 +8,8 @@ import {
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
-  private static INSTANCE: CategoriesRepository;
-
-  private constructor() {
+  constructor() {
     this.repository = getRepository(Category);
-  }
-
-  public static getInstance(): CategoriesRepository {
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
-    }
-    return CategoriesRepository.INSTANCE;
   }
 
   async create({ description, name }: ICreateCategoryDTO): Promise<void> {
@@ -35,7 +26,8 @@ class CategoriesRepository implements ICategoriesRepository {
     return categories;
   }
 
-  async findByName(name: string): Promise<Category | undefined> {
+  async findByName(name: string): Promise<Category> {
+    // Select * from categories where name = "name" limit 1
     const category = await this.repository.findOne({ name });
     return category;
   }
