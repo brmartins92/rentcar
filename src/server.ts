@@ -2,7 +2,7 @@ import express, { response } from "express";
 import swaggerUI from "swagger-ui-express";
 
 import "./database";
-
+import "reflect-metadata";
 import "./shared/container";
 
 import { router } from "./routes/index";
