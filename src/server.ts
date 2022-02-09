@@ -17,4 +17,4 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
 app.use(router);
 
-app.listen(3333, () => console.log("Rodando na 3333"));
+app.listen(3336, () => console.log("Rodando na 3336"));
