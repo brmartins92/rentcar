@@ -18,7 +18,7 @@ class CreateSpecificationUseCase {
       await this.specificationsRepository.findByName(name);
 
     if (specificationAlreadyExist) {
-      throw new Error("Category Already exists!");
+      throw new Error("Especification Already exists!");
     }
 
     await this.specificationsRepository.create({ name, description });
