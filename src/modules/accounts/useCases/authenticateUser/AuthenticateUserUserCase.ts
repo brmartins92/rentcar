@@ -14,19 +14,13 @@ class AuthenticateUserUseCase {
     private userRepository: IUserRepository
   ){}
 
-  async execute({ email }: IRequest) {
+  async execute({ email, password }: IRequest) {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user) {
       throw new Error("Email or password incorrect");
     }
-
-
   }
 }
 
 export { AuthenticateUserUseCase };
-
-function email(email: any) {
-  throw new Error("Function not implemented.");
-}
