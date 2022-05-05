@@ -37,8 +37,8 @@ class AuthenticateUserUseCase {
       throw new Error("Email or password incorrect");
     }
 
-    const token = sign( 
-      { user: "infoUser" }, 
+    const token = sign(
+      { user: "infoUser" },
       "202cb962ac59075b964b07152d234b70",
       {
         subject: user.id,
@@ -46,10 +46,15 @@ class AuthenticateUserUseCase {
       }
     );
 
-    return {
-      user,
-      token
+    const tokenReturn: IResponse = {
+      token,
+      user: {
+        name: user.name,
+        email: user.email,
+      }
     }
+
+    return tokenReturn;
   }
 }
 
