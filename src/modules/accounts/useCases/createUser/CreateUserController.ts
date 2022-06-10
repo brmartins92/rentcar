@@ -12,7 +12,7 @@ class CreateUserController {
     await createUserUserCase.execute({
       name,email,password,driver_license
     })
-    
+
     return response.status(201).send();
   }
 }
