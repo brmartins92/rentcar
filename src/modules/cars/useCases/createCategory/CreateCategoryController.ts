@@ -13,7 +13,7 @@ class CreateCategoryController {
    } catch (error) {
      console.log(error);
    }
-   
+
   }
 }
 
