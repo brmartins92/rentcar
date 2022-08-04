@@ -1,7 +1,7 @@
 import express,{ NextFunction, Response, Request } from "express";
 import swaggerUI from "swagger-ui-express";
 import "express-async-errors"
-import "../../../database";
+import "@shared/infra/typeorm";
 import "reflect-metadata";
 import "../../container";
 
