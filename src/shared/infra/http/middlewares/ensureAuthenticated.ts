@@ -17,13 +17,13 @@ export async function ensureAuthenticated(request: Request, response: Response, 
   }
 
   try {
-    const [ , token ] = authHeader.split(" ");
-    const {sub: user_id } = verify(token, "202cb962ac59075b964b07152d234b70") as IpayLoad;
+    const [, token] = authHeader.split(" ");
+    const { sub: user_id } = verify(token, "202cb962ac59075b964b07152d234b70") as IpayLoad;
     const userRepository = new UserRepository();
     const user = await userRepository.findById(user_id);
 
     if (!user) {
-      throw new AppError("User is not exist!",401)
+      throw new AppError("User is not exist!", 401)
     }
 
     request.user = {
