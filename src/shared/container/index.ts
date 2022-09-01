@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { ICategoriesRepository } from "@modules/cars/repositories/interfaces/ICategoriesRepository";
 import { CategoriesRepository } from "@modules/cars/infra/typeorm/repositories/CategoriesRepository";
 
-import { ISpecificationRepository } from "@modules/cars/repositories/interfaces/ISpecificationsRepository";
+import { ISpecificationsRepository } from "@modules/cars/repositories/interfaces/ISpecificationsRepository";
 import { SpecificationsRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationsRepository";
 
 import { IUserRepository } from "@modules/accounts/repositories/Interfaces/IUsersRepository";
@@ -18,7 +18,7 @@ container.registerSingleton<ICategoriesRepository>(
   CategoriesRepository
 );
 
-container.registerSingleton<ISpecificationRepository>(
+container.registerSingleton<ISpecificationsRepository>(
   "SpecificationsRepository",
   SpecificationsRepository
 );
