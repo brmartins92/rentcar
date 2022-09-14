@@ -13,7 +13,7 @@ class UploadCarImagesUseCase {
   constructor(
     @inject("CarsImagesRepository")
     private carsImagesRepository: ICarsImagesRepository,
-    //@inject("StorageProvider")
+    // @inject("StorageProvider")
     //private storageProvider: IStorageProvider
   ) { }
   async execute({ car_id, images_name }: IRequest): Promise<void> {
